@@ -1,8 +1,9 @@
-//let button;
+let startPressed=false;
 let timer1=30;
 let timer2;
 
 function easyMode(){
+  //use an array
   let radius=random(20,100);
   
   for(let i=0; i<3; i++){
@@ -20,19 +21,8 @@ function easyMode(){
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
- 
-  //generator rectangle
-  rect(windowWidth/6,windowHeight/8,500,500);
+  noLoop();
 
-  //canvas rectangle
-  fill('green');
-  rect(windowWidth/2,windowHeight/8,500,500);
-  
-  fill('white');
-  textSize(50);
-  text('Memorize it!', windowWidth/2+125 , height * 0.667);
-
-  easyMode();
 
   /* Difficulty level buttons
   
@@ -67,28 +57,50 @@ function setup() {
 }
 
 function draw(){
-  if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
-    if(timer2>0 && mouseIsPressed === true){
-      stroke(10);
-      line(mouseX, mouseY, pmouseX, pmouseY);
+  if(startPressed==false){
+    startB = createButton('Play!');
+    startB.position(200, windowHeight/2);
+    startB.size(200,100);
+    startB.style("font-family", "Bodoni");
+    startB.style("font-size", "48px");
+    startB.mousePressed(gamePage);
   }
 
-  fill('white');
-  rect(50,70,100,50);
-  timePassed();
+  else{
 
-  if(timer1==0){
-  fill('white');
-  rect(50,70,100,50);
+    if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
+      if(timer2>0 && mouseIsPressed == true){
+        stroke(10);
+        line(mouseX, mouseY, pmouseX, pmouseY);
+    }
+
+    //generator rectangle
+    rect(windowWidth/6,windowHeight/8,500,500);
+
+  //canvas rectangle
+    fill('green');
+    rect(windowWidth/2,windowHeight/8,500,500);
+  
+    fill('white');
+    textSize(50);
+    text('Memorize it!', windowWidth/2+125 , height * 0.667);
+
+    easyMode();
+    fill('white');
+    rect(50,70,100,50);
+    timePassed();
+  
+    if(timer1==0){
+    fill('white');
+    rect(50,70,100,50);
+    }
   }
-}
+ 
 }
 
-/*
-function changeCursor() {
-    cursor(HAND);
+function gamePage(){
+  startPressed=true;
 }
-*/
   
 
 function timePassed(){
@@ -133,6 +145,5 @@ function timePassed(){
     text(timer2, 100, 100);
     
   }
-
-
+}
 }
