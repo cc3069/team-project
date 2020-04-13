@@ -1,41 +1,12 @@
 let input, button, greeting;
 
-function setup() {
-  // create canvas
-  createCanvas(windowWidth,windowHeight);
-
-  input = createInput();
-  input.position(windowWidth, windowHeight);
-
-  // appear after certain amt of time: button = createButton('submit');
-  button.position(input.x + input.width, 10);
-  button.mousePressed(greet);
-  greeting = createElement('h2', 'Memory Art Game');
-  greeting.position(10, 1);
-
-  textAlign(CENTER);
-  textSize(30);
-}
-
-function greet() {
-  const name = input.value();
-  greeting.html('hello ' + name + '!');
-  input.value('');
-  
-  for (let i = 0; i < 200; i++) {
-    push();
-    fill(random(0), 10, 100);
-    translate(random(width), random(height));
-    rotate(random(2 * PI));
-    text(name, 0, 0);
-    pop();
-  }
-}
 //let button;
+let startPressed=false;
 let timer1=30;
 let timer2;
 
 function easyMode(){
+  //use an array
   let radius=random(20,100);
   
   for(let i=0; i<3; i++){
@@ -53,19 +24,18 @@ function easyMode(){
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
- 
-  //generator rectangle
-  rect(windowWidth/6,windowHeight/8,500,500);
+  input = createInput();
+  input.position(windowWidth, windowHeight);
 
-  //canvas rectangle
-  fill('green');
-  rect(windowWidth/2,windowHeight/8,500,500);
-  
-  fill('white');
-  textSize(50);
-  text('Memorize it!', windowWidth/2+125 , height * 0.667);
+  // appear after certain amt of time: button = createButton('submit');
+  button.position(input.x + input.width, 10);
+  button.mousePressed(greet);
+  greeting = createElement('h2', 'Memory Art Game');
+  greeting.position(10, 1);
 
-  easyMode();
+  textAlign(CENTER);
+  textSize(30);
+
 
   /* Difficulty level buttons
   
@@ -100,28 +70,50 @@ function setup() {
 }
 
 function draw(){
-  if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
-    if(timer2>0 && mouseIsPressed === true){
-      stroke(10);
-      line(mouseX, mouseY, pmouseX, pmouseY);
+  if(startPressed==false){
+    startB = createButton('Play!');
+    startB.position(200, windowHeight/2);
+    startB.size(200,100);
+    startB.style("font-family", "Bodoni");
+    startB.style("font-size", "48px");
+    startB.mousePressed(gamePage);
   }
 
-  fill('white');
-  rect(50,70,100,50);
-  timePassed();
+  else{
 
-  if(timer1==0){
-  fill('white');
-  rect(50,70,100,50);
+    if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
+      if(timer2>0 && mouseIsPressed == true){
+        stroke(10);
+        line(mouseX, mouseY, pmouseX, pmouseY);
+    }
+
+    //generator rectangle
+    rect(windowWidth/6,windowHeight/8,500,500);
+
+  //canvas rectangle
+    fill('green');
+    rect(windowWidth/2,windowHeight/8,500,500);
+  
+    fill('white');
+    textSize(50);
+    text('Memorize it!', windowWidth/2+125 , height * 0.667);
+
+    easyMode();
+    fill('white');
+    rect(50,70,100,50);
+    timePassed();
+  
+    if(timer1==0){
+    fill('white');
+    rect(50,70,100,50);
+    }
   }
-}
+ 
 }
 
-/*
-function changeCursor() {
-    cursor(HAND);
+function gamePage(){
+  startPressed=true;
 }
-*/
   
 
 function timePassed(){
@@ -166,6 +158,5 @@ function timePassed(){
     text(timer2, 100, 100);
     
   }
-
-
+}
 }
