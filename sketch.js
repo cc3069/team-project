@@ -1,9 +1,8 @@
-let input, button, greeting;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
-  button = createButton('submit');
-  button.position(19, 19);
+  /*button = createButton('submit');
+  button.position(100, windowHeight/2);
   // what function????button.mousePressed(changeBG);
 
   /* Difficulty level buttons
