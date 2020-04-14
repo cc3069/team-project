@@ -69,13 +69,35 @@ function drawEllipse() {
     }
 }
   
+let rectArray = [];
+​
+function makeRectangles() {
+  fill(random(255), random(255), random(255));
+    for (let i = 0; i < 2; i++) {
+        let rectArrays = {
+            x: random(windowWidth/6,(windowWidth/6)+400),
+            y: random((windowHeight/8), windowHeight/8+400),
+            w: random(10,100),
+            h: random(10,100),
+        }
+        rectArray.append(rectArrays);
+    }
+    
+}
+​
+function drawRectangles() {
+  fill(random(255), random(255), random(255));
+    for (let i = 0; i < xs.length; i++) {
+        let rectArrays = rectArray[i];
+        rect(rectArrays.x, rectArrays.y, rectArrays.w, rectArrays.h);
+    }
+}
   
  
-//rect
-  for(let i=0; i<2; i++){
-    fill(random(255), random(255), random(255));
-    rect(random(windowWidth/6,(windowWidth/6)+400),random((windowHeight/8), windowHeight/8+400),random(10,100),random(10,100));
-  }
+
+  
+   
+  
 
 
 function draw(){
