@@ -8,7 +8,6 @@ function setup() {
   
   //button = createButton('submit');
   //button.position(100, windowHeight/2);
-  // what function????button.mousePressed(changeBG);
 
   /* Difficulty level buttons
   
@@ -42,7 +41,6 @@ function setup() {
 
 }
 
-//let button;
 let startPressed=false;
 let timer1=30;
 let timer2;
@@ -70,6 +68,7 @@ function draw(){
     startB.style("font-family", "Bodoni");
     startB.style("font-size", "48px");
     startB.mousePressed(gamePage);
+    
   }
 
   else{
@@ -87,7 +86,7 @@ function draw(){
 
 function gamePage(){
   startPressed=true;
-  redraw();
+  startB.hide();
 }
 
 function makeGenerator(){
@@ -180,5 +179,7 @@ for (let i = 0; i < d; i++) {
     pixels[index+2] = b;
     pixels[index+3] = a;
   }
+}
 
+}
 }
