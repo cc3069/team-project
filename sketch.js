@@ -1,7 +1,7 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
-  easyMode();
+ 
 
   /*button = createButton('submit');
   button.position(100, windowHeight/2);
@@ -41,13 +41,14 @@ function setup() {
 
 }
 //function easyMode(){}
-
+let rectArray = [];
+let shapes = [];
 let startPressed=false;
 let timer1=30;
 let timer2;
 
 
-let shapes = [];
+
 function makeEllipse() {
   let radius=random(20,100); 
   fill(random(255), random(255), random(255));
@@ -61,16 +62,16 @@ function makeEllipse() {
     }
   
 }
-​
+
 function drawEllipse() {
-    for (let i = 0; i < xs.length; i++) {
+    for (let i = 0; i < shapes.length; i++) {
         let shape = shapes[i];
         ellipse(shape.x, shape.y, shape.z);
     }
 }
   
-let rectArray = [];
-​
+
+
 function makeRectangles() {
   fill(random(255), random(255), random(255));
     for (let i = 0; i < 2; i++) {
@@ -84,10 +85,9 @@ function makeRectangles() {
     }
     
 }
-​
 function drawRectangles() {
   fill(random(255), random(255), random(255));
-    for (let i = 0; i < xs.length; i++) {
+    for (let i = 0; i < rectArray.length; i++) {
         let rectArrays = rectArray[i];
         rect(rectArrays.x, rectArrays.y, rectArrays.w, rectArrays.h);
     }
@@ -101,16 +101,20 @@ function draw(){
     startB.style("font-family", "Bodoni");
     startB.style("font-size", "48px");
     startB.mousePressed(gamePage);
+
     
   }
 
   else{
     makeGenerator();
+    drawEllipse();
+    drawRectangles();
     timePassed();
     if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
       if(timer2>0 && mouseIsPressed == true){
         stroke(10);
         line(mouseX, mouseY, pmouseX, pmouseY);
+  
     }
 
   }
