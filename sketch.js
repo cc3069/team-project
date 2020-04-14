@@ -1,6 +1,7 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
+  easyMode();
 
   /*button = createButton('submit');
   button.position(100, windowHeight/2);
@@ -73,6 +74,7 @@ function draw(){
 
   else{
     makeGenerator();
+    timePassed();
     if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
       if(timer2>0 && mouseIsPressed == true){
         stroke(10);
@@ -101,18 +103,14 @@ function makeGenerator(){
     textSize(50);
     text('Memorize it!', windowWidth/2+125 , height * 0.667);
     
-    timePassed();
-    timePassed()
-    
   
 }
   
 
 function timePassed(){
   fill('white');
-    rect(50,70,100,50);
-  print(timer2)
   rect(50,70,100,50);
+  print(timer2);
 
   textAlign(CENTER,CENTER);
   textSize(50);
@@ -144,16 +142,6 @@ function timePassed(){
 
   
   else{
-    fill('white');
-    rect(50,70,100,50);
-    if(frameCount % 60 == 0 && timer2 > 0){
-      timer2--;
-    }
-
-    textAlign(CENTER,CENTER);
-    fill('orange');
-    textSize(50);
-    text(timer2, 100, 100);
     
     if(frameCount % 60 == 0 && timer2 > 0){
       fill('white');
@@ -161,18 +149,28 @@ function timePassed(){
       timer2--;
     }
 
+    textAlign(CENTER,CENTER);
+    fill('orange');
+    textSize(50);
+    text(timer2, 100, 100);
+
   }
 }
 }
 
-let d = pixelDensity();
-for (let i = 0; i < d; i++) {
-  for (let j = 0; j < d; j++) {
-    // loop over
-    index = 4 * ((y * d + j) * width * d + (x * d + i));
-    pixels[index] = r;
-    pixels[index+1] = g;
-    pixels[index+2] = b;
-    pixels[index+3] = a;
+function getPercent(){
+  let d = pixelDensity();
+  get(windowWidth/2,windowHeight/8,500,500);
+
+  for (let i = 0; i < d; i++) {
+    for (let j = 0; j < d; j++) {
+      // loop over
+      index = 4 * ((y * d + j) * width * d + (x * d + i));
+      pixels[index] = r;
+      pixels[index+1] = g;
+      pixels[index+2] = b;
+      pixels[index+3] = a;
+    }
   }
+
 }
