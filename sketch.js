@@ -47,14 +47,14 @@ let timer1=30;
 let timer2;
 
 
-  let shapes = [];
+let shapes = [];
 function makeEllipse() {
+  let radius=random(20,100); 
   fill(random(255), random(255), random(255));
     for (let i = 0; i < 3; i++) {
         let shape = {
-          let radius=random(20,100); 
-            x: random((windowWidth/6,((windowWidth/6)+400+radius)))
-            y: random(((windowHeight/8), ((windowHeight/8)+400)+radius))
+            x: random((windowWidth/6,((windowWidth/6)+400+radius))),
+            y: random(((windowHeight/8), ((windowHeight/8)+400)+radius)),
             z: random(radius)
         }
         shapes.append(shape);
@@ -65,7 +65,7 @@ function makeEllipse() {
 function drawEllipse() {
     for (let i = 0; i < xs.length; i++) {
         let shape = shapes[i];
-        rect(shape.x, shape.y, 10, 10);
+        ellipse(shape.x, shape.y, shape.z);
     }
 }
   
