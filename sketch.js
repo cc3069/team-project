@@ -2,8 +2,8 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
 
-  /*button = createButton('submit');
-  button.position(100, windowHeight/2);
+  //button = createButton('submit');
+  //button.position(100, windowHeight/2);
   // what function????button.mousePressed(changeBG);
 
   /* Difficulty level buttons
@@ -97,7 +97,7 @@ function makeGenerator(){
     fill('white');
     textSize(50);
     text('Memorize it!', windowWidth/2+125 , height * 0.667);
-    
+    timePassed()
     
   
 }
@@ -113,9 +113,9 @@ function timePassed(){
   fill('blue');
 
   text(timer1, 100, 100);
-  fill('white');
-    rect(50,70,100,50);
   if (frameCount % 60 == 0 && timer1 > 0){
+    fill('white');
+    rect(50,70,100,50);
     timer1--;
   }
 
