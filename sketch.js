@@ -1,27 +1,10 @@
-let startPressed=false;
-let timer1=30;
-let timer2;
-
-function easyMode(){
-  //use an array
-  let radius=random(20,100);
-  
-  for(let i=0; i<3; i++){
-    fill(random(255), random(255), random(255));
-    ellipse(random(windowWidth/6,((windowWidth/6)+400)+radius), random((windowHeight/8), ((windowHeight/8)+400)+radius), radius);
-  }
-
-  for(let i=0; i<2; i++){
-    fill(random(255), random(255), random(255));
-    rect(random(windowWidth/6,(windowWidth/6)+400),random((windowHeight/8), windowHeight/8+400),random(10,100),random(10,100));
-  }
-
-}
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
 
+  /*button = createButton('submit');
+  button.position(100, windowHeight/2);
+  // what function????button.mousePressed(changeBG);
 
   /* Difficulty level buttons
   
@@ -55,6 +38,26 @@ function setup() {
 
 }
 
+//let button;
+let startPressed=false;
+let timer1=30;
+let timer2;
+
+function easyMode(){
+  //use an array
+  let radius=random(20,100);
+  
+  for(let i=0; i<3; i++){
+    fill(random(255), random(255), random(255));
+    ellipse(random(windowWidth/6)((windowWidth/6)+400)+radius), random((windowHeight/8), ((windowHeight/8)+400)+radius), radius);
+  }
+
+  for(let i=0; i<2; i++){
+    fill(random(255), random(255), random(255));
+    rect(random(windowWidth/6,(windowWidth/6)+400),random((windowHeight/8), windowHeight/8+400),random(10,100),random(10,100));
+  }
+
+}
 function draw(){
   if(startPressed==false){
     startB = createButton('Play!');
