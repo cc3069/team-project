@@ -92,13 +92,6 @@ function drawRectangles() {
         rect(rectArrays.x, rectArrays.y, rectArrays.w, rectArrays.h);
     }
 }
-  
- 
-
-  
-   
-  
-
 
 function draw(){
   if(startPressed==false){
