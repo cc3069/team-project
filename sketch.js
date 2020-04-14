@@ -1,6 +1,7 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
+
   /*button = createButton('submit');
   button.position(100, windowHeight/2);
   // what function????button.mousePressed(changeBG);
@@ -48,7 +49,7 @@ function easyMode(){
   
   for(let i=0; i<3; i++){
     fill(random(255), random(255), random(255));
-    ellipse(random(windowWidth/6)((windowWidth/6)+400+radius), random((windowHeight/8), ((windowHeight/8)+400)+radius), radius);
+    ellipse(random(windowWidth/6),((windowWidth/6)+400+radius), random((windowHeight/8), ((windowHeight/8)+400)+radius), radius);
   }
 
   for(let i=0; i<2; i++){
@@ -68,15 +69,26 @@ function draw(){
   }
 
   else{
-
+    makeGenerator();
     if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
       if(timer2>0 && mouseIsPressed == true){
         stroke(10);
         line(mouseX, mouseY, pmouseX, pmouseY);
     }
 
-    //generator rectangle
-    rect(windowWidth/6,windowHeight/8,500,500);
+  }
+ 
+}
+
+function gamePage(){
+  startPressed=true;
+  redraw();
+}
+
+function makeGenerator(){
+  //generator rectangle
+  fill('white');
+  rect(windowWidth/6,windowHeight/8,500,500);
 
   //canvas rectangle
     fill('green');
@@ -85,26 +97,15 @@ function draw(){
     fill('white');
     textSize(50);
     text('Memorize it!', windowWidth/2+125 , height * 0.667);
-
-    easyMode();
-    fill('white');
-    rect(50,70,100,50);
-    timePassed();
+    
+    
   
-    if(timer1==0){
-    fill('white');
-    rect(50,70,100,50);
-    }
-  }
- 
-}
-
-function gamePage(){
-  startPressed=true;
 }
   
 
 function timePassed(){
+  fill('white');
+    rect(50,70,100,50);
   print(timer2)
 
   textAlign(CENTER,CENTER);
@@ -112,7 +113,8 @@ function timePassed(){
   fill('blue');
 
   text(timer1, 100, 100);
-
+  fill('white');
+    rect(50,70,100,50);
   if (frameCount % 60 == 0 && timer1 > 0){
     timer1--;
   }
@@ -135,7 +137,8 @@ function timePassed(){
   }
 
   else{
-
+    fill('white');
+    rect(50,70,100,50);
     if(frameCount % 60 == 0 && timer2 > 0){
       timer2--;
     }
