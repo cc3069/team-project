@@ -41,27 +41,44 @@ function setup() {
   */
 
 }
+//function easyMode(){}
 
-//let button;
 let startPressed=false;
 let timer1=30;
 let timer2;
 
-function easyMode(){
-  //use an array
-  let radius=random(20,100);
-  
-  for(let i=0; i<3; i++){
-    fill(random(255), random(255), random(255));
-    ellipse(random(windowWidth/6),((windowWidth/6)+400+radius), random((windowHeight/8), ((windowHeight/8)+400)+radius), radius);
-  }
 
+  let shapes = [];
+function makeEllipse() {
+  fill(random(255), random(255), random(255));
+    for (let i = 0; i < 3; i++) {
+        let shape = {
+          let radius=random(20,100); 
+            x: random((windowWidth/6,((windowWidth/6)+400+radius)))
+            y: random(((windowHeight/8), ((windowHeight/8)+400)+radius))
+            z: random(radius)
+        }
+        shapes.append(shape);
+    }
+  
+}
+​
+function drawEllipse() {
+    for (let i = 0; i < xs.length; i++) {
+        let shape = shapes[i];
+        rect(shape.x, shape.y, 10, 10);
+    }
+}
+  
+  
+ 
+//rect
   for(let i=0; i<2; i++){
     fill(random(255), random(255), random(255));
     rect(random(windowWidth/6,(windowWidth/6)+400),random((windowHeight/8), windowHeight/8+400),random(10,100),random(10,100));
   }
 
-}
+
 function draw(){
   if(startPressed==false){
     startB = createButton('Play!');
@@ -179,6 +196,10 @@ for (let i = 0; i < d; i++) {
     pixels[index+1] = g;
     pixels[index+2] = b;
     pixels[index+3] = a;
+  }
+
+
+}
   }
 
 }
