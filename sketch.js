@@ -1,41 +1,10 @@
 let input, button, greeting;
-
-//let button;
-let startPressed=false;
-let timer1=30;
-let timer2;
-
-function easyMode(){
-  //use an array
-  let radius=random(20,100);
-  
-  for(let i=0; i<3; i++){
-    fill(random(255), random(255), random(255));
-    ellipse(random(windowWidth/6,((windowWidth/6)+400)+radius), random((windowHeight/8), ((windowHeight/8)+400)+radius), radius);
-  }
-
-  for(let i=0; i<2; i++){
-    fill(random(255), random(255), random(255));
-    rect(random(windowWidth/6,(windowWidth/6)+400),random((windowHeight/8), windowHeight/8+400),random(10,100),random(10,100));
-  }
-
-}
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
-  input = createInput();
-  input.position(windowWidth, windowHeight);
-
-  // appear after certain amt of time: button = createButton('submit');
-  button.position(input.x + input.width, 10);
-  button.mousePressed(greet);
-  greeting = createElement('h2', 'Memory Art Game');
-  greeting.position(10, 1);
-
-  textAlign(CENTER);
-  textSize(30);
-
+  button = createButton('submit');
+  button.position(19, 19);
+  // what function????button.mousePressed(changeBG);
 
   /* Difficulty level buttons
   
@@ -69,6 +38,26 @@ function setup() {
 
 }
 
+//let button;
+let startPressed=false;
+let timer1=30;
+let timer2;
+
+function easyMode(){
+  //use an array
+  let radius=random(20,100);
+  
+  for(let i=0; i<3; i++){
+    fill(random(255), random(255), random(255));
+    ellipse(random(windowWidth/6)((windowWidth/6)+400)+radius), random((windowHeight/8), ((windowHeight/8)+400)+radius), radius);
+  }
+
+  for(let i=0; i<2; i++){
+    fill(random(255), random(255), random(255));
+    rect(random(windowWidth/6,(windowWidth/6)+400),random((windowHeight/8), windowHeight/8+400),random(10,100),random(10,100));
+  }
+
+}
 function draw(){
   if(startPressed==false){
     startB = createButton('Play!');
