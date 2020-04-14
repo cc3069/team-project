@@ -49,7 +49,7 @@ function easyMode(){
   
   for(let i=0; i<3; i++){
     fill(random(255), random(255), random(255));
-    ellipse(random(windowWidth/6)((windowWidth/6)+400)+radius), random((windowHeight/8), ((windowHeight/8)+400)+radius), radius);
+    ellipse(random(windowWidth/6),((windowWidth/6)+400+radius), random((windowHeight/8), ((windowHeight/8)+400)+radius), radius);
   }
 
   for(let i=0; i<2; i++){
@@ -87,6 +87,7 @@ function gamePage(){
 
 function makeGenerator(){
   //generator rectangle
+  fill('white');
   rect(windowWidth/6,windowHeight/8,500,500);
 
   //canvas rectangle
@@ -97,9 +98,10 @@ function makeGenerator(){
     textSize(50);
     text('Memorize it!', windowWidth/2+125 , height * 0.667);
     
+    timePassed();
     fill('white');
     rect(50,70,100,50);
-    timePassed();
+    
   
 }
   
