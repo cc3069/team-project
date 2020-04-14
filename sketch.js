@@ -21,7 +21,6 @@ function easyMode(){
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
-  noLoop();
 
 
   /* Difficulty level buttons
@@ -67,15 +66,25 @@ function draw(){
   }
 
   else{
-
+    makeGenerator();
     if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
       if(timer2>0 && mouseIsPressed == true){
         stroke(10);
         line(mouseX, mouseY, pmouseX, pmouseY);
     }
 
-    //generator rectangle
-    rect(windowWidth/6,windowHeight/8,500,500);
+  }
+ 
+}
+
+function gamePage(){
+  startPressed=true;
+  redraw();
+}
+
+function makeGenerator(){
+  //generator rectangle
+  rect(windowWidth/6,windowHeight/8,500,500);
 
   //canvas rectangle
     fill('green');
@@ -84,22 +93,11 @@ function draw(){
     fill('white');
     textSize(50);
     text('Memorize it!', windowWidth/2+125 , height * 0.667);
-
-    easyMode();
+    
     fill('white');
     rect(50,70,100,50);
     timePassed();
   
-    if(timer1==0){
-    fill('white');
-    rect(50,70,100,50);
-    }
-  }
- 
-}
-
-function gamePage(){
-  startPressed=true;
 }
   
 
