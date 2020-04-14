@@ -47,13 +47,8 @@ function setup() {
 
 }
 //function easyMode(){}
-let rectArray = [];
-let shapes = [];
-let startPressed=false;
-let timer1=30;
-let timer2;
 
-//function easyMode(){}
+
 
 function makeEllipse() {
   
@@ -76,21 +71,19 @@ function drawEllipse() {
         ellipse(shape.x, shape.y, shape.z);
     }
 }
-  
-​function makeRectangles() {
- 
+function makeRectangles(){
   fill(random(255), random(255), random(255));
-    for (let i = 0; i < 2; i++) {
-        let rectArrays = {
+    for (let i = 0; i < 2; i++){
+        let rectArrays={
             x: random(windowWidth/6,(windowWidth/6)+400),
             y: random((windowHeight/8), windowHeight/8+400),
             w: random(10,100),
             h: random(10,100),
         }
         rectArray.append(rectArrays);
-    }
-    
-}
+    }   
+}  
+
 function drawRectangles() {
   fill(random(255), random(255), random(255));
     for (let i = 0; i < rectArray.length; i++) {
