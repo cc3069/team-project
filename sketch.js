@@ -48,7 +48,7 @@ function easyMode(){
   
   for(let i=0; i<3; i++){
     fill(random(255), random(255), random(255));
-    ellipse(random(windowWidth/6)((windowWidth/6)+400)+radius), random((windowHeight/8), ((windowHeight/8)+400)+radius), radius);
+    ellipse(random(windowWidth/6)((windowWidth/6)+400+radius), random((windowHeight/8), ((windowHeight/8)+400)+radius), radius);
   }
 
   for(let i=0; i<2; i++){
