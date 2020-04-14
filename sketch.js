@@ -165,7 +165,6 @@ function timePassed(){
 }
 }
 
-let d = pixelDensity();
 for (let i = 0; i < d; i++) {
   for (let j = 0; j < d; j++) {
     // loop over
