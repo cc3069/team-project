@@ -1,7 +1,12 @@
+let startPressed=false;
+let timer1=30;
+let timer2;
+let shapes = [];
+let rectArray = [];
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
-  easyMode();
 
   /*button = createButton('submit');
   button.position(100, windowHeight/2);
@@ -40,38 +45,32 @@ function setup() {
   */
 
 }
+
 //function easyMode(){}
 
-let startPressed=false;
-let timer1=30;
-let timer2;
-
-
-let shapes = [];
 function makeEllipse() {
+  
   let radius=random(20,100); 
   fill(random(255), random(255), random(255));
     for (let i = 0; i < 3; i++) {
         let shape = {
             x: random((windowWidth/6,((windowWidth/6)+400+radius))),
             y: random(((windowHeight/8), ((windowHeight/8)+400)+radius)),
-            z: random(radius)
+            z: random(radius),
         }
         shapes.append(shape);
     }
   
 }
-​
-function drawEllipse() {
+​function drawEllipse() {
     for (let i = 0; i < xs.length; i++) {
         let shape = shapes[i];
         ellipse(shape.x, shape.y, shape.z);
     }
 }
   
-let rectArray = [];
-​
-function makeRectangles() {
+​function makeRectangles() {
+ 
   fill(random(255), random(255), random(255));
     for (let i = 0; i < 2; i++) {
         let rectArrays = {
