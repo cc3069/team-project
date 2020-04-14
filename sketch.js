@@ -99,22 +99,19 @@ function makeGenerator(){
     text('Memorize it!', windowWidth/2+125 , height * 0.667);
     
     timePassed();
-    
-    
-  
 }
   
 
 function timePassed(){
-  print(timer2)
-
   fill('white');
+  print(timer2)
   rect(50,70,100,50);
-  
+
   textAlign(CENTER,CENTER);
   textSize(50);
   fill('blue');
   text(timer1, 100, 100);
+  
 
   if (frameCount % 60 == 0 && timer1 > 0){
     fill('white');
@@ -123,7 +120,6 @@ function timePassed(){
   }
 
   else if (timer1 == 0){
-    
     fill('green');
     rect(windowWidth/6,windowHeight/8,500,500);
 
@@ -132,28 +128,27 @@ function timePassed(){
     
     fill('white')
     rect(windowWidth/2,windowHeight/8,500,500);
-    
-    timer2=60;
-
     rect(50,70,100,50);
+
+    timer2=60;
     timer1= -1;
     
   }
 
+  
   else{
-
-    if(frameCount % 60 == 0 && timer2 > 0){
-      fill('white');
-      rect(50,70,100,50);
-      
-      timer2--;
-    }
 
     textAlign(CENTER,CENTER);
     fill('orange');
     textSize(50);
     text(timer2, 100, 100);
     
+    if(frameCount % 60 == 0 && timer2 > 0){
+      fill('white');
+      rect(50,70,100,50);
+      timer2--;
+    }
+
   }
 }
 }
