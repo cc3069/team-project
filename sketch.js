@@ -211,10 +211,11 @@ function timePassed(){
 
 
 function getPercent(){
-  //let d = pixelDensity(2);
+  let d = pixelDensity(2);
   let genPixels= [];
   let canvasPixels= [];
-  let percent=0;
+  let match = 0;
+  let percent;
 
   genPixels= get(windowWidth/6,windowHeight/8,500,500);
   canvasPixels= get(windowWidth/2,windowHeight/8,500,500);
@@ -226,6 +227,7 @@ function getPercent(){
             }
           }
         }
+        
         print(percent+'%');
   }
   
