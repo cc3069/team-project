@@ -108,7 +108,7 @@ function draw(){
 
       if(timer1>0){
         //generator rectangle
-        stroke(10);
+        noStroke();
         fill('white');
         rect(windowWidth/6,windowHeight/8,500,500);
 
@@ -150,7 +150,7 @@ function draw(){
       if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
         if(timer2>0 && mouseIsPressed == true){
             stroke('red');
-            strokeWeight(5);
+            strokeWeight(4);
             line(mouseX, mouseY, pmouseX, pmouseY);
           }
       }
@@ -182,7 +182,6 @@ function timePassed(){
   }
   
   else{
-    
     if(frameCount % 60 == 0 && timer2 > 0){
       fill('white');
       rect(50,70,100,50);
@@ -193,12 +192,22 @@ function timePassed(){
     fill('orange');
     textSize(50);
     text(timer2, 100, 100);
+
+    if(timer2==0){
+      noStroke();
+      fill('white');
+      rect(windowWidth/6,windowHeight/8,500,500);
+
+      fill('red');
+      drawEllipse();
+      drawRectangles();
+    }
   }
 }
 
-
-/*function getPercent(){
-  let d = pixelDensity();
+/*
+function getPercent(){
+  let d = pixelDensity(2);
   get(windowWidth/2,windowHeight/8,500,500);
 
   for (let i = 0; i < d; i++) {
@@ -220,6 +229,6 @@ for (let i = 0; i < d; i++) {
     pixels[index+3] = a;
   }
 }
-
-}
 */
+
+
