@@ -7,7 +7,10 @@ let rectArray = [];
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
- 
+
+  makeEllipse();
+  makeRectangles();
+
   /*button = createButton('submit');
   button.position(100, windowHeight/2);
   
@@ -47,19 +50,18 @@ function setup() {
 }
 //function easyMode(){}
 
-
-
 function makeEllipse() {
   
   let radius=random(20,100); 
   fill(random(255), random(255), random(255));
     for (let i = 0; i < 3; i++) {
         let shape = {
-            x: random((windowWidth/6,((windowWidth/6)+400+radius))),
-            y: random(((windowHeight/8), ((windowHeight/8)+400+radius)),
-            z: random(radius),
+            x: random((windowWidth/8,((windowWidth/8)+400+radius))),
+            y: random(((windowHeight/8), ((windowHeight/8)+400+radius))),
+            w:random(radius),
+            h:random(radius),
         }
-        shapes.append(shape);
+        append(shapes, shape);
     }
   
 }
@@ -67,7 +69,7 @@ function makeEllipse() {
 function drawEllipse() {
     for (let i = 0; i < shapes.length; i++) {
         let shape = shapes[i];
-        ellipse(shape.x, shape.y, shape.z);
+        ellipse(shape.x, shape.y, shape.w, shape.h);
     }
 }
 function makeRectangles(){
@@ -79,7 +81,7 @@ function makeRectangles(){
             w: random(10,100),
             h: random(10,100),
         }
-        rectArray.append(rectArrays);
+        append(rectArray, rectArrays);
     }   
 }  
 
@@ -99,49 +101,21 @@ function draw(){
     startB.style("font-family", "Bodoni");
     startB.style("font-size", "48px");
     startB.mousePressed(gamePage);
-
-    
   }
 
   else{
-    makeGenerator();
-    drawEllipse();
-    drawRectangles();
-    timePassed();
-    if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
-      if(timer2>0 && mouseIsPressed == true){
-        stroke(10);
-        line(mouseX, mouseY, pmouseX, pmouseY);
-  
-    }
-
-  }
- 
-}
-
-function gamePage(){
-  startPressed=true;
-  startB.hide();
-}
-
-function makeGenerator(){
   //generator rectangle
   fill('white');
   rect(windowWidth/6,windowHeight/8,500,500);
 
   //canvas rectangle
-    fill('green');
-    rect(windowWidth/2,windowHeight/8,500,500);
-  
-    fill('white');
-    textSize(50);
-    text('Memorize it!', windowWidth/2+125 , height * 0.667);
-    
-  
-}
-  
+  fill('green');
+  rect(windowWidth/2,windowHeight/8,500,500);
 
-function timePassed(){
+  fill('white');
+  textSize(50);
+  text('Memorize it!', windowWidth/2+125 , height * 0.667);
+
   fill('white');
   rect(50,70,100,50);
   print(timer2);
@@ -150,7 +124,27 @@ function timePassed(){
   textSize(50);
   fill('blue');
   text(timer1, 100, 100);
+
+    drawEllipse();
+    drawRectangles();
+    timePassed();
+    if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
+      if(timer2>0 && mouseIsPressed == true){
+        stroke(10);
+        line(mouseX, mouseY, pmouseX, pmouseY);
+    }
+
+  }
+ 
+}
+
+function gamePage(){
+  startPressed=true;
+  //startB.hide();
+}
   
+
+function timePassed(){
 
   if (frameCount % 60 == 0 && timer1 > 0){
     fill('white');
@@ -173,7 +167,6 @@ function timePassed(){
     timer1= -1;
     
   }
-
   
   else{
     
