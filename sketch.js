@@ -52,12 +52,12 @@ function setup() {
 
 function makeEllipse() {
   
-  let radius=random(50,200); 
+  let radius=random(100,200); 
   fill(random(255), random(255), random(255));
     for (let i = 0; i < 3; i++) {
         let shape = {
-            x: random((windowWidth/8,((windowWidth/8)+400+radius))),
-            y: random(((windowHeight/8), ((windowHeight/8)+400+radius))),
+            x: random((windowWidth/6,((windowWidth/6)+(2*radius)))),
+            y: random(((windowHeight/8), ((windowHeight/8)+(2*radius)))),
             w:random(radius),
             h:random(radius),
         }
@@ -78,15 +78,14 @@ function makeRectangles(){
         let rectArrays={
             x: random(windowWidth/6,(windowWidth/6)+400),
             y: random((windowHeight/8), windowHeight/8+400),
-            w: random(10,100),
-            h: random(10,100),
+            w: random(50,100),
+            h: random(50,100),
         }
         append(rectArray, rectArrays);
     }   
 }  
 
 function drawRectangles() {
-  fill(random(255), random(255), random(255));
     for (let i = 0; i < rectArray.length; i++) {
         let rectArrays = rectArray[i];
         rect(rectArrays.x, rectArrays.y, rectArrays.w, rectArrays.h);
