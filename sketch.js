@@ -52,7 +52,7 @@ function setup() {
 
 function makeEllipse() {
   
-  let radius=random(20,100); 
+  let radius=random(50,200); 
   fill(random(255), random(255), random(255));
     for (let i = 0; i < 3; i++) {
         let shape = {
@@ -102,42 +102,42 @@ function draw(){
     startB.style("font-size", "48px");
     startB.mousePressed(gamePage);
   }
+
   else{
-  //generator rectangle
-  fill('white');
-  rect(windowWidth/6,windowHeight/8,500,500);
+      //generator rectangle
+      fill('white');
+      rect(windowWidth/6,windowHeight/8,500,500);
 
-  //canvas rectangle
-  fill('green');
-  rect(windowWidth/2,windowHeight/8,500,500);
+      //canvas rectangle
+      fill('green');
+      rect(windowWidth/2,windowHeight/8,500,500);
 
-  fill('white');
-  textSize(50);
-  text('Memorize it!', windowWidth/2+125 , height * 0.667);
+      fill('white');
+      textSize(50);
+      text('Memorize it!', windowWidth/2+125 , height * 0.667);
 
-  fill('white');
-  rect(50,70,100,50);
-  print(timer2);
+      fill('white');
+      rect(50,70,100,50);
+      print(timer2);
 
-  textAlign(CENTER,CENTER);
-  textSize(50);
-  fill('blue');
-  text(timer1, 100, 100);
+      textAlign(CENTER,CENTER);
+      textSize(50);
+      fill('blue');
+      text(timer1, 100, 100);
 
-    drawEllipse();
-  drawRectangles();
-    timePassed();
+      drawEllipse();
+      drawRectangles();
+      timePassed();
     
-    if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
-      if(timer2>0 && mouseIsPressed == true){
-        stroke(10);
-        line(mouseX, mouseY, pmouseX, pmouseY);
+      if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
+        if(timer2>0 && mouseIsPressed == true){
+            stroke(10);
+            line(mouseX, mouseY, pmouseX, pmouseY);
+          }
+      }
     }
-
   }
  
-
-
 
 function gamePage(){
   startPressed=true;
@@ -210,7 +210,5 @@ for (let i = 0; i < d; i++) {
   }
 }
 
-
 }
 */
-  }
