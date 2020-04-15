@@ -3,7 +3,7 @@ let timer1=30;
 let timer2;
 let shapes = [];
 let rectArray = [];
-let d = pixelDensity();
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -143,17 +143,21 @@ function draw(){
         text('Now Draw it!', windowWidth/6+250 , height * 0.667);
 
         rect(50,70,100,50);
+
+        if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
+          if(timer2>0 && mouseIsPressed == true){
+              stroke('red');
+              strokeWeight(4);
+              line(mouseX, mouseY, pmouseX, pmouseY);
+            }
+        }
+
+        getPercent();
       }
 
       timePassed();
     
-      if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
-        if(timer2>0 && mouseIsPressed == true){
-            stroke('red');
-            strokeWeight(4);
-            line(mouseX, mouseY, pmouseX, pmouseY);
-          }
-      }
+      
     }
   }
  
@@ -207,16 +211,32 @@ function timePassed(){
 
 
 function getPercent(){
-  get(windowWidth/2,windowHeight/8,500,500);
-
   let d = pixelDensity(2);
-  let imagePixels= [];
+  let genPixels= [];
+  let canvasPixels= [];
+  let image1= get(windowWidth/6,windowHeight/8,500,500);
+  let image2= get(windowWidth/2,windowHeight/8,500,500);
+  let percent=0;
 
-  for(let i=0; i<imagePixels.length; i++){
-    get
-    append(imagePixels, )
+  image1.loadPixels();
+  image2.loadPixels();
+    for (let i = 0; i < image1.width; i++) {
+        for (let j = 0; j < image1.height; j++) {
+          append(image1[i],genPixels);
+
+          for(let k=0;k<image2.width; k++){
+            for (let h = 0; h < image1.height; h++) {
+              append(image2[k],canvasPixels);
+              if(canvasPixels[k]==genPixels[i]){
+                percent++;
+                print(percent)
+              }
+            }
+      }
+    }
   }
 
+/*
  
   for (let i = 0; i < d; i++) {
     for (let j = 0; j < d; j++) {
@@ -250,3 +270,5 @@ let components = [
   pixels[off + 3]
 ];
 print(components);
+*/
+}
