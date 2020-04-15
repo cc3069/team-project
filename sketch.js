@@ -205,7 +205,7 @@ function timePassed(){
   }
 }
 
-/*
+
 function getPercent(){
   let d = pixelDensity(2);
   get(windowWidth/2,windowHeight/8,500,500);
@@ -229,6 +229,4 @@ for (let i = 0; i < d; i++) {
     pixels[index+3] = a;
   }
 }
-*/
-
-
+  }
