@@ -3,6 +3,7 @@ let timer1=30;
 let timer2;
 let shapes = [];
 let rectArray = [];
+let d = pixelDensity();
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
