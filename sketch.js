@@ -14,7 +14,7 @@ function setup() {
   /*button = createButton('submit');
   button.position(100, windowHeight/2);
   
-  //button = createButton('submit');
+//button = createButton('submit');
   //button.position(100, windowHeight/2);
 
   /* Difficulty level buttons
@@ -94,7 +94,7 @@ function drawRectangles() {
 }
 
 function draw(){
-  if(startPressed==false){
+  if(startPressed==false) {
     startB = createButton('Play!');
     startB.position(200, windowHeight/2);
     startB.size(200,100);
@@ -102,7 +102,6 @@ function draw(){
     startB.style("font-size", "48px");
     startB.mousePressed(gamePage);
   }
-
   else{
   //generator rectangle
   fill('white');
@@ -126,7 +125,7 @@ function draw(){
   text(timer1, 100, 100);
 
     drawEllipse();
-    drawRectangles();
+  drawRectangles();
     timePassed();
     
     if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
@@ -137,7 +136,8 @@ function draw(){
 
   }
  
-}
+
+
 
 function gamePage(){
   startPressed=true;
@@ -186,7 +186,7 @@ function timePassed(){
 }
 }
 
-function getPercent(){
+/*function getPercent(){
   let d = pixelDensity();
   get(windowWidth/2,windowHeight/8,500,500);
 
@@ -213,3 +213,4 @@ for (let i = 0; i < d; i++) {
 
 }
 }
+*/
