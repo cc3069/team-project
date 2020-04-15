@@ -104,15 +104,46 @@ function draw(){
   }
 
   else{
+
+      if(timer1>0){
+        //generator rectangle
+        fill('white');
+        rect(windowWidth/6,windowHeight/8,500,500);
+
+        fill('white');
+        rect(50,70,100,50);
+        print(timer2);
+
+        //canvas rectangle
+        fill('green');
+        rect(windowWidth/2,windowHeight/8,500,500);
+
+        fill('white');
+        textSize(50);
+        text('Memorize it!', windowWidth/2+150 , height * 0.667);
+
+        textAlign(CENTER,CENTER);
+        textSize(50);
+        fill('blue');
+        text(timer1, 100, 100);
       
+        fill('red');
+        drawEllipse();
+        drawRectangles();
+      }
 
-      textAlign(CENTER,CENTER);
-      textSize(50);
-      fill('blue');
-      text(timer1, 100, 100);
+      else if(timer1<=0){
+        fill('green');
+        rect(windowWidth/6,windowHeight/8,500,500);
+    
+        textSize(50);
+        fill('white')
+        text('Now Draw it!', windowWidth/6+250 , height * 0.667);
+        
 
-      drawEllipse();
-      drawRectangles();
+        rect(50,70,100,50);
+      }
+
       timePassed();
     
       if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
@@ -134,21 +165,7 @@ function gamePage(){
 function timePassed(){
 
   if (frameCount % 60 == 0 && timer1 > 0){
-    //generator rectangle
-    fill('white');
-    rect(windowWidth/6,windowHeight/8,500,500);
-
-    fill('white');
-    rect(50,70,100,50);
-    print(timer2);
-
-    //canvas rectangle
-    fill('green');
-    rect(windowWidth/2,windowHeight/8,500,500);
-
-    fill('white');
-    textSize(50);
-    text('Memorize it!', windowWidth/2+125 , height * 0.667);
+    
     
     fill('white');
     rect(50,70,100,50);
@@ -156,19 +173,10 @@ function timePassed(){
   }
 
   else if (timer1 == 0){
-    fill('green');
-    rect(windowWidth/6,windowHeight/8,500,500);
-
-    textSize(50);
-    text('Now Draw it!', windowWidth/6+250 , height * 0.667);
-    
-    fill('white')
-    rect(windowWidth/2,windowHeight/8,500,500);
-    rect(50,70,100,50);
-
     timer2=60;
     timer1= -1;
-    
+    fill('white');
+    rect(windowWidth/2,windowHeight/8,500,500);
   }
   
   else{
@@ -183,7 +191,6 @@ function timePassed(){
     fill('orange');
     textSize(50);
     text(timer2, 100, 100);
-
   }
 }
 
