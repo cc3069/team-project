@@ -220,6 +220,8 @@ function getPercent(){
  
   for (let i = 0; i < d; i++) {
     for (let j = 0; j < d; j++) {
+    } //endcol for loop
+  }// end row for loop
       // loop over
       index = 4 * ((y * d + j) * width * d + (x * d + i));
       pixels[index] = r;
