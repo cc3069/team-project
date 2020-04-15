@@ -207,6 +207,8 @@ function timePassed(){
 
 
 function getPercent(){
+  get(windowWidth/2,windowHeight/8,500,500);
+
   let d = pixelDensity(2);
   let imagePixels= [];
 
@@ -215,8 +217,7 @@ function getPercent(){
     append(imagePixels, )
   }
 
-  get(windowWidth/2,windowHeight/8,500,500);
-
+ 
   for (let i = 0; i < d; i++) {
     for (let j = 0; j < d; j++) {
       // loop over
