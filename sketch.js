@@ -12,7 +12,7 @@ function setup() {
   /*button = createButton('submit');
   button.position(100, windowHeight/2);
   
-  //button = createButton('submit');
+//button = createButton('submit');
   //button.position(100, windowHeight/2);
 
   /* Difficulty level buttons
