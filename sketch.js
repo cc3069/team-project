@@ -3,7 +3,7 @@ let timer1=30;
 let timer2;
 let shapes = [];
 let rectArray = [];
-let d = pixelDensity();
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -143,17 +143,21 @@ function draw(){
         text('Now Draw it!', windowWidth/6+250 , height * 0.667);
 
         rect(50,70,100,50);
+
+        if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
+          if(timer2>0 && mouseIsPressed == true){
+              stroke('red');
+              strokeWeight(4);
+              line(mouseX, mouseY, pmouseX, pmouseY);
+            }
+        }
+
+        getPercent();
       }
 
       timePassed();
     
-      if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
-        if(timer2>0 && mouseIsPressed == true){
-            stroke('red');
-            strokeWeight(4);
-            line(mouseX, mouseY, pmouseX, pmouseY);
-          }
-      }
+      
     }
   }
  
@@ -207,26 +211,22 @@ function timePassed(){
 
 
 function getPercent(){
-  let d = pixelDensity(2);
-  get(windowWidth/2,windowHeight/8,500,500);
+  //let d = pixelDensity(2);
+  let genPixels= [];
+  let canvasPixels= [];
+  let percent=0;
 
-  for (let i = 0; i < d; i++) {
-    for (let j = 0; j < d; j++) {
-      // loop over
-      index = 4 * ((y * d + j) * width * d + (x * d + i));
-      pixels[index] = r;
-      pixels[index+1] = g;
-      pixels[index+2] = b;
-      pixels[index+3] = a;
-    }
-for (let i = 0; i < d; i++) {
-  for (let j = 0; j < d; j++) {
-    // loop over
-    index = 4 * ((y * d + j) * width * d + (x * d + i));
-    pixels[index] = r;
-    pixels[index+1] = g;
-    pixels[index+2] = b;
-    pixels[index+3] = a;
+  genPixels= get(windowWidth/6,windowHeight/8,500,500);
+  canvasPixels= get(windowWidth/2,windowHeight/8,500,500);
+
+        for (let j = 0; j < genPixels.length; j++) {
+          for(let k=0; k<canvasPixels.length;k++){
+            if(genPixels[j]==canvasPixels[k]){
+              percent++
+            }
+          }
+        }
+        print(percent+'%');
   }
-}
-  }
+  
+
