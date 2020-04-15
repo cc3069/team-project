@@ -151,8 +151,6 @@ function draw(){
               line(mouseX, mouseY, pmouseX, pmouseY);
             }
         }
-
-        getPercent();
       }
 
       timePassed();
@@ -205,6 +203,8 @@ function timePassed(){
       fill('red');
       drawEllipse();
       drawRectangles();
+      pixelDensity(3);
+      getPercent();
     }
   }
 }
@@ -214,20 +214,24 @@ function getPercent(){
   let d = pixelDensity(2);
   let genPixels= [];
   let canvasPixels= [];
-  let match = 0;
+  let match=0;
   let percent;
 
   genPixels= get(windowWidth/6,windowHeight/8,500,500);
   canvasPixels= get(windowWidth/2,windowHeight/8,500,500);
 
+  genPixels.loadPixels();
+  canvasPixels.loadPixels();
+
         for (let j = 0; j < genPixels.length; j++) {
           for(let k=0; k<canvasPixels.length;k++){
             if(genPixels[j]==canvasPixels[k]){
-              percent++
+              match++;
             }
           }
         }
-        
+
+        percent= (match/genPixels.length)*100;
         print(percent+'%');
   }
   
