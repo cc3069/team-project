@@ -128,6 +128,7 @@ function draw(){
     drawEllipse();
     drawRectangles();
     timePassed();
+    
     if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
       if(timer2>0 && mouseIsPressed == true){
         stroke(10);
