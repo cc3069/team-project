@@ -51,16 +51,17 @@ function setup() {
 //function easyMode(){}
 
 function makeEllipse() {
+  //rect(windowWidth/6,windowHeight/8,500,500);
   
   let radius=random(100,200); 
-  fill(random(255), random(255), random(255));
     for (let i = 0; i < 3; i++) {
         let shape = {
-            x: random((windowWidth/6,((windowWidth/6)+(2*radius)))),
-            y: random(((windowHeight/8), ((windowHeight/8)+(2*radius)))),
+            x: random((windowWidth/6)+radius,((windowWidth/6)+500-radius)),
+            y: random(((windowHeight/8)+radius, ((windowHeight/8)+500-radius))),
             w:random(radius),
             h:random(radius),
         }
+        fill(random(255), random(255), random(255));
         append(shapes, shape);
     }
   
@@ -73,7 +74,6 @@ function drawEllipse() {
     }
 }
 function makeRectangles(){
-  fill(random(255), random(255), random(255));
     for (let i = 0; i < 2; i++){
         let rectArrays={
             x: random(windowWidth/6,(windowWidth/6)+400),
@@ -81,6 +81,7 @@ function makeRectangles(){
             w: random(50,100),
             h: random(50,100),
         }
+        fill(random(255), random(255), random(255));
         append(rectArray, rectArrays);
     }   
 }  
@@ -103,21 +104,7 @@ function draw(){
   }
 
   else{
-      //generator rectangle
-      fill('white');
-      rect(windowWidth/6,windowHeight/8,500,500);
-
-      //canvas rectangle
-      fill('green');
-      rect(windowWidth/2,windowHeight/8,500,500);
-
-      fill('white');
-      textSize(50);
-      text('Memorize it!', windowWidth/2+125 , height * 0.667);
-
-      fill('white');
-      rect(50,70,100,50);
-      print(timer2);
+      
 
       textAlign(CENTER,CENTER);
       textSize(50);
@@ -147,6 +134,22 @@ function gamePage(){
 function timePassed(){
 
   if (frameCount % 60 == 0 && timer1 > 0){
+    //generator rectangle
+    fill('white');
+    rect(windowWidth/6,windowHeight/8,500,500);
+
+    fill('white');
+    rect(50,70,100,50);
+    print(timer2);
+
+    //canvas rectangle
+    fill('green');
+    rect(windowWidth/2,windowHeight/8,500,500);
+
+    fill('white');
+    textSize(50);
+    text('Memorize it!', windowWidth/2+125 , height * 0.667);
+    
     fill('white');
     rect(50,70,100,50);
     timer1--;
