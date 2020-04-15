@@ -107,6 +107,7 @@ function draw(){
 
       if(timer1>0){
         //generator rectangle
+        stroke(10);
         fill('white');
         rect(windowWidth/6,windowHeight/8,500,500);
 
@@ -139,7 +140,6 @@ function draw(){
         textSize(50);
         fill('white')
         text('Now Draw it!', windowWidth/6+250 , height * 0.667);
-        
 
         rect(50,70,100,50);
       }
@@ -148,7 +148,8 @@ function draw(){
     
       if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
         if(timer2>0 && mouseIsPressed == true){
-            stroke(10);
+            stroke('red');
+            strokeWeight(5);
             line(mouseX, mouseY, pmouseX, pmouseY);
           }
       }
