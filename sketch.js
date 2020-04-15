@@ -8,7 +8,6 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
  
-
   /*button = createButton('submit');
   button.position(100, windowHeight/2);
   
@@ -57,7 +56,7 @@ function makeEllipse() {
     for (let i = 0; i < 3; i++) {
         let shape = {
             x: random((windowWidth/6,((windowWidth/6)+400+radius))),
-            y: random(((windowHeight/8), ((windowHeight/8)+400)+radius)),
+            y: random(((windowHeight/8), ((windowHeight/8)+400+radius)),
             z: random(radius),
         }
         shapes.append(shape);
@@ -219,4 +218,4 @@ for (let i = 0; i < d; i++) {
 
 
 }
-  }
+}
