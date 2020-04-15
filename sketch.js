@@ -47,31 +47,27 @@ function setup() {
   button4.style("font-family", "Bodoni");
   button4.style("font-size", "48px");
   */
-
 }
-//function easyMode(){}
 
 function makeEllipse() {
   //rect(windowWidth/6,windowHeight/8,500,500);
   
-  let radius=random(100,200); 
     for (let i = 0; i < 3; i++) {
-        let shape = {
-            x: random((windowWidth/6)+radius,((windowWidth/6)+500-radius)),
-            y: random(((windowHeight/8)+radius, ((windowHeight/8)+500-radius))),
-            w:random(radius),
-            h:random(radius),
+        let ellipses = {
+            x: random((windowWidth/6)+100,((windowWidth/6)+250)-100),
+            y: random((windowHeight/8)+100, ((windowHeight/8)+500)-100),
+            w:random(20,100),
+            h:random(20,100),
         }
-        fill(random(255), random(255), random(255));
-        append(shapes, shape);
+        append(shapes, ellipses);
     }
   
 }
 
 function drawEllipse() {
     for (let i = 0; i < shapes.length; i++) {
-        let shape = shapes[i];
-        ellipse(shape.x, shape.y, shape.w, shape.h);
+        let ellipses = shapes[i];
+        ellipse(ellipses.x, ellipses.y, ellipses.w, ellipses.h);
     }
 }
 function makeRectangles(){
@@ -82,7 +78,6 @@ function makeRectangles(){
             w: random(50,100),
             h: random(50,100),
         }
-        fill(random(255), random(255), random(255));
         append(rectArray, rectArrays);
     }   
 }  
@@ -211,12 +206,14 @@ function timePassed(){
 
 
 function getPercent(){
-  //let d = pixelDensity(2);
   let genPixels= [];
   let canvasPixels= [];
   let match=0;
   let percent;
-
+  
+  pixelDensity(2);
+  updatePixels();
+  
   genPixels= get(windowWidth/6,windowHeight/8,500,500);
   canvasPixels= get(windowWidth/2,windowHeight/8,500,500);
 
