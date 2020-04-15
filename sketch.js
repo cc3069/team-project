@@ -56,8 +56,8 @@ function makeEllipse() {
         let ellipses = {
             x: random((windowWidth/6)+100,((windowWidth/6)+250)-100),
             y: random((windowHeight/8)+100, ((windowHeight/8)+500)-100),
-            w:random(20,100),
-            h:random(20,100),
+            w:random(10,100),
+            h:random(10,100),
         }
         append(shapes, ellipses);
     }
