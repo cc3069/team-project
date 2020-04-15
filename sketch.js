@@ -7,6 +7,8 @@ let rectArray = [];
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
+  makeEllipse();
+  makeRectangles();
   /*button = createButton('submit');
   button.position(100, windowHeight/2);
   
@@ -115,8 +117,6 @@ function draw(){
     text('Memorize it!', windowWidth/2+125 , height * 0.667);
     drawEllipse();
   drawRectangles();
-  makeEllipse();
-  makeRectangles();
     timePassed();
     if(mouseX>windowWidth/2 && mouseX< (windowWidth/2)+500 && mouseY>windowHeight/8 && mouseY<(windowHeight/8)+500){
       if(timer2>0 && mouseIsPressed == true){
