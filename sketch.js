@@ -96,7 +96,7 @@ function drawRectangles() {
 function draw(){
   if(startPressed==false) {
     startB = createButton('Play!');
-    startB.position(200, windowHeight/2);
+    startB.position(20, windowHeight/5);
     startB.size(200,100);
     startB.style("font-family", "Bodoni");
     startB.style("font-size", "48px");
