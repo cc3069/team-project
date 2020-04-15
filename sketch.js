@@ -204,9 +204,16 @@ function timePassed(){
   }
 }
 
-/*
+
 function getPercent(){
   let d = pixelDensity(2);
+  let imagePixels= [];
+
+  for(let i=0; i<imagePixels.length; i++){
+    get
+    append(imagePixels, )
+  }
+
   get(windowWidth/2,windowHeight/8,500,500);
 
   for (let i = 0; i < d; i++) {
@@ -228,6 +235,14 @@ for (let i = 0; i < d; i++) {
     pixels[index+3] = a;
   }
 }
-*/
 
 
+let x, y, d; // set these to the coordinates
+let off = (y * width + x) * d * 4;
+let components = [
+  pixels[off],
+  pixels[off + 1],
+  pixels[off + 2],
+  pixels[off + 3]
+];
+print(components);
