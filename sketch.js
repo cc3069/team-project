@@ -184,7 +184,7 @@ function timePassed(){
 
   }
 }
-}
+
 
 /*function getPercent(){
   let d = pixelDensity();
@@ -212,5 +212,5 @@ for (let i = 0; i < d; i++) {
 
 
 }
-}
 */
+  }
