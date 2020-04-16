@@ -121,7 +121,9 @@ function draw(){
         noStroke();
         fill('#F7A556')
         rect(100,50,1200,800)
-        
+        //hide-play button
+        fill('#a04888');
+        rect(1000, windowHeight/1.25,200,100);
 
         //generator rectangle
         noStroke();
@@ -178,8 +180,6 @@ function draw(){
 
 function gamePage(){
   startPressed=true;
-  fill('#F7A556');
-  rect(800, windowHeight/1.25,200,100);
 }
 
 function playAgain(){
@@ -229,21 +229,13 @@ function timePassed(){
       playA = createButton('Play Again!');
       playA.position(800, windowHeight/1.25);
       playA.size(200,100);
-      startA.style("font-family", "Bodoni");
+      playA.style("font-family", "Bodoni");
       startA.style("font-size", "40px");
       startA.style("color","#fff");
       startA.style("background-color","#a04888"); 
       noStroke();
       fill('white');
       rect(windowWidth/6,windowHeight/8,500,500);
-
-      //hide play-button
-      playA = createButton('Play Again!');
-      playA.position(800, windowHeight/1.25);
-      playA.size(200,100);
-      playA.style("font-family", "Bodoni");
-      playA.style("font-size", "40px");
-      playA.mousePressed(playAgain);
 
       fill('red');
       drawEllipse();
