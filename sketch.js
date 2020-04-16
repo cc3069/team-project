@@ -156,6 +156,7 @@ function playAgain(){
     rect(windowWidth/6,windowHeight/8,500,500);
     makeEllipse();
     makeRectangles();
+    
   }
   
 
@@ -190,23 +191,24 @@ function timePassed(){
       noStroke();
       fill('white');
       rect(windowWidth/6,windowHeight/8,500,500);
-
+      textSize(25)
+      text('Do you think your drawing resembles it? Great Job! Going to Try Again? Have Fun!', 500, 25);
+      playA.mousePressed(playAgain);
       fill('red');
       drawEllipse();
       drawRectangles();
       timer2==-1;
     }
     
-      if(timer2==-1){
-        getPercent();
-        playA.mousePressed(playAgain);
-      }
+      
+  
+      
   }
 }
 
 
-
-function getPercent(){
+//in Progress
+/*function getPercent(){
   let genPixels=[];
   let canvasPixels=[];
   let match=0;
@@ -249,6 +251,7 @@ function getPercent(){
   }
 }
 }
+*/
   
 
 
