@@ -121,7 +121,6 @@ function draw(){
         noStroke();
         fill('#F7A556')
         rect(100,50,1200,800)
-        startB = createButton('Play Again!');
         
 
         //generator rectangle
