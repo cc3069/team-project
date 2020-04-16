@@ -85,7 +85,9 @@ function draw(){
         noStroke();
         fill('#F7A556')
         rect(100,50,1200,800)
-        
+        //hide-play button
+        fill('#a04888');
+        rect(1000, windowHeight/1.25,200,100);
 
         //generator rectangle
         noStroke();
