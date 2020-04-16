@@ -7,6 +7,7 @@ let rectArray = [];
 
 
 function setup() {
+  loadPixels();
   createCanvas(windowWidth, windowHeight);
   background('#F7A556');
 
@@ -85,7 +86,6 @@ function draw(){
         noStroke();
         fill('#F7A556')
         rect(100,50,1200,800)
-        
 
         //generator rectangle
         noStroke();
@@ -187,45 +187,67 @@ function timePassed(){
     text(timer2, 100, 100);
 
     if(timer2==0){
-      
       noStroke();
       fill('white');
       rect(windowWidth/6,windowHeight/8,500,500);
-    
-      playA.mousePressed(playAgain);
 
       fill('red');
       drawEllipse();
       drawRectangles();
-      getPercent();
+      timer2==-1;
     }
+    
+      if(timer2==-1){
+        getPercent();
+        playA.mousePressed(playAgain);
+      }
   }
 }
 
 function getPercent(){
-  let genPixels= [];
-  let canvasPixels= [];
+  let genPixels=[];
+  let canvasPixels=[];
   let match=0;
   let percent;
+
+  for (let y = windowHeight/8; y < (windowWidth/8)+500; y++) {
+    for (let x = windowWidth/6; x < (windowHeight/6)+500; x++) {
+      let index = (x + y * width)*4;
+      let components1=[
+        pixels[index+0],
+        pixels[index+1],
+        pixels[index+2],
+        pixels[index+3],
+      ]
+      append(genPixels, components1);
+      //genPixels.push(components1);
+    }   
+    }
   
-  genPixels= get(windowWidth/6,windowHeight/8,500,500);
-  canvasPixels= get(windowWidth/2,windowHeight/8,500,500);
+    for (let k = windowWidth/8; k < (windowWidth/8)+500; k++) {
+      for (let h = windowHeight/2; h < (windowHeight/2)+500; h++) {
+        let index2 = (h + k * width)*4;
+        let components2=[
+          pixels[index2+0],
+          pixels[index2+1],
+          pixels[index2+2],
+          pixels[index2+3]
+        ]
+        //canvasPixels.push(components2);
+        append(genPixels, components2);    
+      }
 
-  //genPixels.loadPixels();
-  //canvasPixels.loadPixels();
-
-        for (let j = 0; j < genPixels.length; j++) {
-          for(let k=0; k<canvasPixels.length;k++){
-            if(genPixels[j]==canvasPixels[k]){
-              match++;
-            }
-          }
+      for (let g=0; g< genPixels.length; g++) {
+        if(genPixels[g] == canvasPixels[g]) {
+          match++;
         }
 
-        percent= (match/genPixels.length)*100;
-        print(percent+'%');
-  
+      percent= (match/genPixels.length)*100;
+      print(percent+"%");
   }
+}
+}
+  
 
 
   
