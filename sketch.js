@@ -103,9 +103,9 @@ function draw(){
         text('Can you memorize the art in 30 seconds', 500, 300);
         text('and Draw it in 60 seconds?', 1000, 400);
         textSize(50);
-        text('Ready?', 500, 555);
+        text('Ready?', 500, 600);
     startB = createButton('Play!');
-    startB.position(800, windowHeight/1.5);
+    startB.position(800, windowHeight/1.25);
     startB.size(200,100);
     startB.style("font-family", "Bodoni");
     startB.style("font-size", "48px");
@@ -121,7 +121,11 @@ function draw(){
         fill('#F7A556')
         rect(100,50,1200,800)
         //hide play-button
-        
+        startB = createButton('Play Again!');
+        startB.position(800, windowHeight/1.25);
+        startB.size(200,100);
+        startB.style("font-family", "Bodoni");
+        startB.style("font-size", "40px");
         //generator rectangle
         noStroke();
         fill('white');
