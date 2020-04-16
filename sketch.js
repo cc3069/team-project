@@ -55,7 +55,6 @@ function drawRectangles() {
 
 function draw(){
   if(startPressed==false) {
-    //let col = color(247, 165, 86);
     fill(random(255),random(255),random(255));
     textAlign(CENTER,CENTER);
         textSize(50);
@@ -85,8 +84,6 @@ function draw(){
         noStroke();
         fill('#F7A556')
         rect(100,50,1200,800)
-        
-
         //generator rectangle
         noStroke();
         fill('white');
@@ -139,7 +136,7 @@ function draw(){
  
 
 function gamePage(){
-  startPressed=true;
+  if(startPressed=true){;
   playA = createButton('Play Again!');
   playA.position(800, windowHeight/1.25);
   playA.size(200,100);
@@ -147,16 +144,18 @@ function gamePage(){
   playA.style("font-size", "40px");
   playA.style("color","#fff");
   playA.style("background-color","#a04888"); 
+  }
 }
 
+
 function playAgain(){
-    timer1=30;
+    timer1=30
     redraw();
     fill('white');
     rect(windowWidth/6,windowHeight/8,500,500);
     makeEllipse();
     makeRectangles();
-}
+  }
   
 
 function timePassed(){
@@ -202,6 +201,8 @@ function timePassed(){
   }
 }
 
+
+
 function getPercent(){
   let genPixels= [];
   let canvasPixels= [];
@@ -210,23 +211,4 @@ function getPercent(){
   
   genPixels= get(windowWidth/6,windowHeight/8,500,500);
   canvasPixels= get(windowWidth/2,windowHeight/8,500,500);
-
-  //genPixels.loadPixels();
-  //canvasPixels.loadPixels();
-
-        for (let j = 0; j < genPixels.length; j++) {
-          for(let k=0; k<canvasPixels.length;k++){
-            if(genPixels[j]==canvasPixels[k]){
-              match++;
-            }
-          }
-        }
-
-        percent= (match/genPixels.length)*100;
-        print(percent+'%');
-  
-  }
-
-
-  
-
+}
