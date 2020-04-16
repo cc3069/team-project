@@ -102,7 +102,7 @@ function draw(){
 
         fill('white');
         textSize(50);
-        text('Memorize it!', windowWidth/2+150 , height * 0.667);
+        text('Memorize it!', windowWidth/2+250 , height * 0.45);
 
         textAlign(CENTER,CENTER);
         textSize(50);
