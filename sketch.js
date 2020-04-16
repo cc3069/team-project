@@ -12,46 +12,9 @@ function setup() {
 
   makeEllipse();
   makeRectangles();
-
-  /*button = createButton('submit');
-  button.position(100, windowHeight/2);
-  
-//button = createButton('submit');
-  //button.position(100, windowHeight/2);
-
-  /* Difficulty level buttons
-  
-  button = createButton('Easy');
-  button.position(200, windowHeight/2);
-  button.size(200,100);
-  button.style("font-family", "Bodoni");
-  button.style("font-size", "48px");
-  button.mouseOver(changeCursor);
-  button.mousePressed(changeBG);
-    
-
-  button2 = createButton('Medium');
-  button2.position(500, windowHeight/2);
-  button2.size(200,100);
-  button2.style("font-family", "Bodoni");
-  button2.style("font-size", "48px");
-
-  button3 = createButton('Hard');
-  button3.position(800, windowHeight/2);
-  button3.size(200,100);
-  button3.style("font-family", "Bodoni");
-  button3.style("font-size", "48px");
-
-  button4 = createButton('Xtreme');
-  button4.position(1100, windowHeight/2);
-  button4.size(200,100);
-  button4.style("font-family", "Bodoni");
-  button4.style("font-size", "48px");
-  */
 }
 
 function makeEllipse() {
-  //rect(windowWidth/6,windowHeight/8,500,500);
   
     for (let i = 0; i < 3; i++) {
         let ellipses = {
@@ -178,8 +141,13 @@ function draw(){
 
 function gamePage(){
   startPressed=true;
-  fill('#F7A556');
-  rect(800, windowHeight/1.25,200,100);
+  playA = createButton('Play Again!');
+  playA.position(800, windowHeight/1.25);
+  playA.size(200,100);
+  playA.style("font-family", "Bodoni");
+  playA.style("font-size", "40px");
+  playA.style("color","#fff");
+  playA.style("background-color","#a04888"); 
 }
 
 function playAgain(){
@@ -199,8 +167,6 @@ function playAgain(){
 function timePassed(){
 
   if (frameCount % 60 == 0 && timer1 > 0){
-    
-    
     fill('white');
     rect(50,70,100,50);
     timer1--;
@@ -226,23 +192,13 @@ function timePassed(){
     text(timer2, 100, 100);
 
     if(timer2==0){
-      playA = createButton('Play Again!');
-      playA.position(800, windowHeight/1.25);
-      playA.size(200,100);
-      startA.style("font-family", "Bodoni");
-      startA.style("font-size", "40px");
-      startA.style("color","#fff");
-      startA.style("background-color","#a04888"); 
+      
       noStroke();
       fill('white');
       rect(windowWidth/6,windowHeight/8,500,500);
 
       //hide play-button
-      playA = createButton('Play Again!');
-      playA.position(800, windowHeight/1.25);
-      playA.size(200,100);
-      playA.style("font-family", "Bodoni");
-      playA.style("font-size", "40px");
+    
       playA.mousePressed(playAgain);
 
       fill('red');
