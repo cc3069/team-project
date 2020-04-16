@@ -151,8 +151,6 @@ function gamePage(){
 
 function playAgain(){
   if(timer2==0){
-    fill('white');
-    rect(windowWidth/6,windowHeight/8,500,500);
     makeEllipse();
     makeRectangles();
     drawEllipse();
@@ -201,7 +199,6 @@ function timePassed(){
       fill('red');
       drawEllipse();
       drawRectangles();
-      pixelDensity(3);
       //getPercent();
     }
   }
@@ -234,7 +231,7 @@ function getPercent(){
   }
 
 
-  
+
   */
   
 
