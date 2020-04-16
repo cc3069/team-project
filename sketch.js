@@ -56,7 +56,6 @@ function drawRectangles() {
 
 function draw(){
   if(startPressed==false) {
-    //let col = color(247, 165, 86);
     fill(random(255),random(255),random(255));
     textAlign(CENTER,CENTER);
         textSize(50);
@@ -86,7 +85,6 @@ function draw(){
         noStroke();
         fill('#F7A556')
         rect(100,50,1200,800)
-
         //generator rectangle
         noStroke();
         fill('white');
@@ -102,7 +100,7 @@ function draw(){
 
         fill('white');
         textSize(50);
-        text('Memorize it!', windowWidth/2+150 , height * 0.667);
+        text('Memorize it!', windowWidth/2+250 , height * 0.45);
 
         textAlign(CENTER,CENTER);
         textSize(50);
@@ -139,7 +137,7 @@ function draw(){
  
 
 function gamePage(){
-  startPressed=true;
+  if(startPressed=true){;
   playA = createButton('Play Again!');
   playA.position(800, windowHeight/1.25);
   playA.size(200,100);
@@ -147,16 +145,18 @@ function gamePage(){
   playA.style("font-size", "40px");
   playA.style("color","#fff");
   playA.style("background-color","#a04888"); 
+  }
 }
 
+
 function playAgain(){
-    timer1=30;
+    timer1=30
     redraw();
     fill('white');
     rect(windowWidth/6,windowHeight/8,500,500);
     makeEllipse();
     makeRectangles();
-}
+  }
   
 
 function timePassed(){
@@ -203,6 +203,8 @@ function timePassed(){
       }
   }
 }
+
+
 
 function getPercent(){
   let genPixels=[];
