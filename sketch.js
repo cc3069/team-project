@@ -67,7 +67,7 @@ function draw(){
         text('and Draw it in 60 seconds?', 1000, 400);
         textSize(50);
         text('Ready?', 500, 600);
-        
+
     startB = createButton('Play!');
     startB.position(800, windowHeight/1.25);
     startB.size(200,100);
@@ -85,9 +85,7 @@ function draw(){
         noStroke();
         fill('#F7A556')
         rect(100,50,1200,800)
-        //hide-play button
-        fill('#a04888');
-        rect(1000, windowHeight/1.25,200,100);
+        
 
         //generator rectangle
         noStroke();
@@ -136,8 +134,6 @@ function draw(){
       }
 
       timePassed();
-    
-      
     }
   }
  
@@ -154,16 +150,12 @@ function gamePage(){
 }
 
 function playAgain(){
-  if(timer2==0){
+    timer1=30;
+    redraw();
     fill('white');
     rect(windowWidth/6,windowHeight/8,500,500);
     makeEllipse();
     makeRectangles();
-    drawEllipse();
-    drawRectangles();
-    timer1=30;
-    redraw();
-  }
 }
   
 
@@ -205,13 +197,11 @@ function timePassed(){
       fill('red');
       drawEllipse();
       drawRectangles();
-      pixelDensity(3);
-      //getPercent();
+      getPercent();
     }
   }
 }
 
-/*
 function getPercent(){
   let genPixels= [];
   let canvasPixels= [];
@@ -237,6 +227,6 @@ function getPercent(){
   
   }
 
-  */
+
   
 
