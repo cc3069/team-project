@@ -231,14 +231,14 @@ function getPercent(){
   let match=0;
   let percent;
   
-  pixelDensity(2);
-  updatePixels();
+  //pixelDensity(2);
+  //updatePixels();
   
   genPixels= get(windowWidth/6,windowHeight/8,500,500);
   canvasPixels= get(windowWidth/2,windowHeight/8,500,500);
 
-  genPixels.loadPixels();
-  canvasPixels.loadPixels();
+  //genPixels.loadPixels();
+  //canvasPixels.loadPixels();
 
         for (let j = 0; j < genPixels.length; j++) {
           for(let k=0; k<canvasPixels.length;k++){
