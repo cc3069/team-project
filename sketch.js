@@ -96,7 +96,7 @@ function draw(){
     fill(random(255),random(255),random(255));
     textAlign(CENTER,CENTER);
         textSize(50);
-        text('Welcome To Art Memory Game!', 700, 100);
+        text('Welcome To Art Memory Game!', 800, 100);
         fill('#42518C')
         textSize(35);
         text('Instructions:', 300, 200);
@@ -109,7 +109,7 @@ function draw(){
     startB.size(200,100);
     startB.style("font-family", "Bodoni");
     startB.style("font-size", "48px");
-    //startB.style("background-style", col);
+    startB.style("background-style", '#a04888');
     startB.mousePressed(gamePage);
   }
 
@@ -121,11 +121,11 @@ function draw(){
         fill('#F7A556')
         rect(100,50,1200,800)
         //hide play-button
-        startB = createButton('Play Again!');
-        startB.position(800, windowHeight/1.25);
-        startB.size(200,100);
-        startB.style("font-family", "Bodoni");
-        startB.style("font-size", "40px");
+        playA = createButton('Play Again!');
+        playA.position(800, windowHeight/1.25);
+        playA.size(200,100);
+        startA.style("font-family", "Bodoni");
+        startA.style("font-size", "40px");
         //generator rectangle
         noStroke();
         fill('white');
