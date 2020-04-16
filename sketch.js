@@ -96,10 +96,10 @@ function draw(){
     fill(random(255),random(255),random(255));
     textAlign(CENTER,CENTER);
         textSize(50);
-        text('Welcome To Art Memory Game!', 700, 100);
+        text('Welcome To Art Memory Game!', 800, 100);
         fill('#42518C')
         textSize(35);
-        text('Instructions:', 300, 200);
+        text('Instructions:', 280, 200);
         text('Can you memorize the art in 30 seconds', 500, 300);
         text('and Draw it in 60 seconds?', 1000, 400);
         textSize(50);
@@ -109,7 +109,8 @@ function draw(){
     startB.size(200,100);
     startB.style("font-family", "Bodoni");
     startB.style("font-size", "48px");
-    //startB.style("background-style", col);
+    startB.style("color","#fff");
+    startB.style("background-color","#a04888");
     startB.mousePressed(gamePage);
   }
 
