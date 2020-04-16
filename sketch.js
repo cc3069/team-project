@@ -5,9 +5,10 @@ let shapes = [];
 let rectArray = [];
 
 
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(0);
+  background('#F7A556');
 
   makeEllipse();
   makeRectangles();
@@ -91,17 +92,36 @@ function drawRectangles() {
 
 function draw(){
   if(startPressed==false) {
+    //let col = color(247, 165, 86);
+    fill(random(255),random(255),random(255));
+    textAlign(CENTER,CENTER);
+        textSize(50);
+        text('Welcome To Art Memory Game!', 700, 100);
+        fill('#42518C')
+        textSize(35);
+        text('Instructions:', 300, 200);
+        text('Can you memorize the art in 30 seconds', 500, 300);
+        text('and Draw it in 60 seconds?', 1000, 400);
+        textSize(50);
+        text('Ready?', 500, 555);
     startB = createButton('Play!');
-    startB.position(20, windowHeight/5);
+    startB.position(800, windowHeight/1.5);
     startB.size(200,100);
     startB.style("font-family", "Bodoni");
     startB.style("font-size", "48px");
+    //startB.style("background-style", col);
     startB.mousePressed(gamePage);
   }
 
   else{
 
       if(timer1>0){
+        //cover-up rectangle
+        noStroke();
+        fill('#F7A556')
+        rect(100,50,1200,800)
+        //hide play-button
+        
         //generator rectangle
         noStroke();
         fill('white');
