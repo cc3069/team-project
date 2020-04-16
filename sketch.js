@@ -67,6 +67,7 @@ function draw(){
         text('and Draw it in 60 seconds?', 1000, 400);
         textSize(50);
         text('Ready?', 500, 600);
+        
     startB = createButton('Play!');
     startB.position(800, windowHeight/1.25);
     startB.size(200,100);
@@ -196,8 +197,6 @@ function timePassed(){
       noStroke();
       fill('white');
       rect(windowWidth/6,windowHeight/8,500,500);
-
-      //hide play-button
     
       playA.mousePressed(playAgain);
 
@@ -205,20 +204,17 @@ function timePassed(){
       drawEllipse();
       drawRectangles();
       pixelDensity(3);
-      getPercent();
+      //getPercent();
     }
   }
 }
 
-
+/*
 function getPercent(){
   let genPixels= [];
   let canvasPixels= [];
   let match=0;
   let percent;
-  
-  //pixelDensity(2);
-  //updatePixels();
   
   genPixels= get(windowWidth/6,windowHeight/8,500,500);
   canvasPixels= get(windowWidth/2,windowHeight/8,500,500);
@@ -236,6 +232,9 @@ function getPercent(){
 
         percent= (match/genPixels.length)*100;
         print(percent+'%');
+  
   }
+
+  */
   
 
